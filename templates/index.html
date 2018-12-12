@@ -120,22 +120,20 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
 
     
     <div class="mbr-row main-row">
+    {% if featured_award %}
         <div class="image-block ">
-            <amp-img src="{{ last_award.image_cover.url }}" layout="responsive" width="675" height="450" alt="GLS Excellence Award {{ last_award.name }}" class="mobirise-loader">
+            <amp-img src="{{ featured_award.image_cover.url }}" layout="responsive" width="675" height="450" alt="GLS Excellence Award {{ featured_award.name }}" class="mobirise-loader">
                 <div placeholder="" class="placeholder">
                                 <div class="mobirise-spinner">
                                     <em></em>
                                     <em></em>
                                     <em></em>
-                                </div></div>
-                
+                                </div></div> 
             </amp-img>
         </div>
         <div class="text-block mbr-col-sm-12 mbr-col-md-12 mbr-col-lg-6">
-            
             <h4 class="mbr-section-subtitle mbr-fonts-style align-left display-5" >
                 This week’s Award Celebrates:</h4>
-            {% if featured_award %}
             <h5 class="mbr-section-subtitle mbr-fonts-style align-left" style="font-size: 1.5em;">
                 {% if featured_award.site == 'GLS' %}
                     {{ featured_award.site }} <b>{{ featured_award.country.name }}</b> for
@@ -152,8 +150,23 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
                 <div class="mbr-section-btn align-right"><a class="btn-underline text-primary display-7" href="{% url 'award' featured_award.slug %}">
                                 LEARN MORE
                             </a></div>
-            </div>
-            {% else %}
+        </div>
+
+    {% else %}
+
+        <div class="image-block ">
+            <amp-img src="{{ last_award.image_cover.url }}" layout="responsive" width="675" height="450" alt="GLS Excellence Award {{ last_award.name }}" class="mobirise-loader">
+                <div placeholder="" class="placeholder">
+                                <div class="mobirise-spinner">
+                                    <em></em>
+                                    <em></em>
+                                    <em></em>
+                                </div></div> 
+            </amp-img>
+        </div>
+        <div class="text-block mbr-col-sm-12 mbr-col-md-12 mbr-col-lg-6">
+            <h4 class="mbr-section-subtitle mbr-fonts-style align-left display-5" >
+                This week’s Award Celebrates:</h4>
             <h5 class="mbr-section-subtitle mbr-fonts-style align-left" style="font-size: 1.5em;">
                 {% if last_award.site == 'GLS' %}
                     {{ last_award.site }} <b>{{ last_award.country.name }}</b> for
@@ -167,12 +180,12 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
                 {{ last_award.description }}
             </p>
             <div class="mbr-section-btn align-right">
-                <div class="mbr-section-btn align-right"><a class="btn-underline text-primary display-7" href="{% url 'award' award.slug %}">
+                <div class="mbr-section-btn align-right"><a class="btn-underline text-primary display-7" href="{% url 'award' last_award.slug %}">
                                 LEARN MORE
                             </a></div>
             </div>
-            {% endif %}
         </div>
+    {% endif %}
     </div>
 </section>
 
