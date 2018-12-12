@@ -135,6 +135,25 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
             
             <h4 class="mbr-section-subtitle mbr-fonts-style align-left display-5" >
                 This week’s Award Celebrates:</h4>
+            {% if featured_award %}
+            <h5 class="mbr-section-subtitle mbr-fonts-style align-left" style="font-size: 1.5em;">
+                {% if featured_award.site == 'GLS' %}
+                    {{ featured_award.site }} <b>{{ featured_award.country.name }}</b> for
+                {% else %}
+                    {{ featured_award.site }}, <b>{{ featured_award.country.name }}</b> for
+                {% endif %}
+                <b style="color:#1d95d2;">{{ featured_award.name }}</b>
+            </h5>
+            <hr style="margin-top:-20px;">
+            <p class="mbr-fonts-style mbr-text align-left display-7" style="text-align: justify;">
+                {{ featured_award.description }}
+            </p>
+            <div class="mbr-section-btn align-right">
+                <div class="mbr-section-btn align-right"><a class="btn-underline text-primary display-7" href="{% url 'award' featured_award.slug %}">
+                                LEARN MORE
+                            </a></div>
+            </div>
+            {% else %}
             <h5 class="mbr-section-subtitle mbr-fonts-style align-left" style="font-size: 1.5em;">
                 {% if last_award.site == 'GLS' %}
                     {{ last_award.site }} <b>{{ last_award.country.name }}</b> for
@@ -148,10 +167,11 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
                 {{ last_award.description }}
             </p>
             <div class="mbr-section-btn align-right">
-                <div class="mbr-section-btn align-right"><a class="btn-underline text-primary display-7" href="https://mobirise.com">
+                <div class="mbr-section-btn align-right"><a class="btn-underline text-primary display-7" href="{% url 'award' award.slug %}">
                                 LEARN MORE
                             </a></div>
             </div>
+            {% endif %}
         </div>
     </div>
 </section>

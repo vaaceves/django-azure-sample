@@ -13,6 +13,14 @@ def home(request):
         'last_three_awards': last_three_awards,
         'last_award': last_award,
     }
+
+    try:
+        featured_award = Award.objects.get(featured=True)  # traemos los detalles
+        context_dic['featured_award'] = featured_award
+
+    except Contenido.DoesNotExist:
+        context_dic['featured_award'] = None
+
     return render(request, 'index.html', context_dic)
 
 # about
