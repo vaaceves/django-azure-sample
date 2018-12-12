@@ -18,7 +18,7 @@ def home(request):
         featured_award = Award.objects.get(featured=True)  # traemos los detalles
         context_dic['featured_award'] = featured_award
 
-    except Contenido.DoesNotExist:
+    except Award.DoesNotExist:
         context_dic['featured_award'] = None
 
     return render(request, 'index.html', context_dic)
