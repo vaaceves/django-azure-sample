@@ -238,12 +238,11 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
                         <p class="mbr-text mbr-fonts-style align-left display-7" style="padding-top:20px; text-align: justify;">
                             {{ last_award.description }}
                         </p>
-                        <div class="mbr-section-btn align-left" style="padding-top:15px;"><a class="btn-underline text-primary display-7" href="https://mobirise.com">
+                        <div class="mbr-section-btn align-left" style="padding-top:15px;"><a class="btn-underline text-primary display-7" href="{% url 'award' last_award.slug %}">
                                 LEARN MORE
                             </a></div>
                     </div>
                 </div>
-            </div>
             {% endfor %}
         </div>
     </div>
