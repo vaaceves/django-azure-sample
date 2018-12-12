@@ -225,10 +225,10 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
                         </amp-img>
                     </div>
                     <div class="card-box">
-                        <h4 class="card-title mbr-fonts-style align-left mbr-light display-5" style="color:#1d95d2;">
+                        <h4 class="card-title mbr-fonts-style align-left mbr-light display-6" style="color:#1d95d2; font-size:1.5em;">
                             {{ award.name }}
                         </h4>
-                        <h5 class="card-title mbr-fonts-style align-left mbr-light display-7" style="padding-top:5px;">
+                        <h5 class="card-title mbr-fonts-style align-left mbr-light display-7" style="padding-top:10px;">
                             {% if last_award.site == 'GLS' %}
                                 {{ last_award.site }} <b>{{ last_award.country.name }}</b>
                             {% else %}
@@ -255,7 +255,7 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
     <div class="container align-center">
         
         
-        <div class="mbr-section-btn"><a class="btn btn-md btn-primary display-4" href="https://mobirise.com">Go to the Archive</a></div>
+        <div class="mbr-section-btn"><a class="btn btn-md btn-primary display-4" href="{% url 'archive' %}">Go to the Archive</a></div>
     </div>
 </section>
 
