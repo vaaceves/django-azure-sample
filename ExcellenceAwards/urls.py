@@ -22,7 +22,7 @@ from .views import home, error_404, about
 from awards.views import ArchiveView, AwardView
 
 urlpatterns = [
-    # path('grappelli/', include('grappelli.urls')), # grappelli URLS
+    path('grappelli/', include('grappelli.urls')), # grappelli URLS
     path('admin/', admin.site.urls),
     path('', home, name='home'),
     path('about', about, name='about'),
