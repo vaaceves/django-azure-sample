@@ -143,7 +143,10 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
                   controls preload="auto" width="700" height="400"
                   poster="{{ award.image_cover.url }}"
                   data-setup='{"example_option":true}'>
-                 <source src="{{ award.file.url }}" type="video/mp4" />
+                 <source src="{{ award.file_mp4.url }}" type="video/mp4" />
+
+                 <source src="{{ award.file_webm.url }}" type="video/webm" />
+                 <source src="{{ award.file_ogg.url }}" type="video/ogg" />
                  <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
                 </video>
             </center>
