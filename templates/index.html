@@ -47,11 +47,10 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link link text-black display-4" href="page2.html">Archive</a>
+                    <a class="nav-link link text-black display-4" href={% url 'archive' %}>Archive</a>
                 </li></ul>
             
-            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary display-4" href="{% url 'archive' %}">
-                  Contact Us</a></div>
+             
       </div>
     </amp-sidebar>
   <section class="menu horizontal-menu cid-rbQvz4zTOU" id="menu1-0">
@@ -85,8 +84,6 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
                     <a class="nav-link link text-black display-4" href="{% url 'archive' %}">Archive</a>
                 </li></ul>
             
-            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary display-4" href="#Contact">
-                  Contact Us</a></div>
       </div>
       
       <button on="tap:sidebar.toggle" class="ampstart-btn hamburger sticky-but">
@@ -107,7 +104,7 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
     
     <div class="mbr-overlay"></div>
     <div class="container align-center">
-        <h1 class="mbr-section-title mbr-fonts-style mbr-bold display-2">Excellence Awards</h1>
+         <h1 class="mbr-section-title mbr-fonts-style mbr-bold display-2">GLS Excellence Awards</h1>
         
 
         
@@ -230,9 +227,9 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
                         </h4>
                         <h5 class="card-title mbr-fonts-style align-left mbr-light display-7" style="padding-top:10px;">
                             {% if last_award.site == 'GLS' %}
-                                {{ last_award.site }} <b>{{ last_award.country.name }}</b>
+                                {{ last_award.site }} <b>{% filter upper %}{{ last_award.country.name }}{% endfilter %}</b>
                             {% else %}
-                                {{ last_award.site }}, <b>{{ last_award.country.name }}</b>
+                                {{ last_award.site }}, <b>{% filter upper %}{{ last_award.country.name }}{% endfilter %}</b>
                             {% endif %}
                         </h5>
                         <p class="mbr-text mbr-fonts-style align-left display-7" style="padding-top:20px; text-align: justify;">
@@ -255,7 +252,7 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
     <div class="container align-center">
         
         
-        <div class="mbr-section-btn"><a class="btn btn-md btn-primary display-4" href="{% url 'archive' %}">Go to the Archive</a></div>
+        <div class="mbr-section-btn"><a class="btn btn-md btn-primary display-4" href="{% url 'archive' %}">Go to Archive</a></div>
     </div>
 </section>
 

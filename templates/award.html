@@ -52,8 +52,6 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
                     <a class="nav-link link text-black display-4" href="{% url 'archive' %}">Archive</a>
                 </li></ul>
             
-            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary display-4" href="#Contact">
-                  Contact Us</a></div>
       </div>
     </amp-sidebar>
   <section class="menu horizontal-menu cid-rbQvz4zTOU" id="menu1-t">
@@ -84,11 +82,10 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link link text-black display-4" href="page2.html">Archive</a>
+                    <a class="nav-link link text-black display-4" href={% url 'archive' %}>Archive</a>
                 </li></ul>
             
-            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary display-4" href="{% url 'archive' %}">
-                  Contact Us</a></div>
+             
       </div>
       
       <button on="tap:sidebar.toggle" class="ampstart-btn hamburger sticky-but">
@@ -109,7 +106,7 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
     
     <div class="mbr-overlay"></div>
     <div class="container align-center">
-        <h1 class="mbr-section-title mbr-fonts-style mbr-bold display-2">Excellence Awards</h1>
+         <h1 class="mbr-section-title mbr-fonts-style mbr-bold display-2">GLS Excellence Awards</h1>
         
 
         
@@ -124,15 +121,12 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
         <div class="video-title mbr-col-sm-12 align-center">
             <h3 class="mbr-section-title mbr-fonts-style mbr-light display-2"  style="margin-top: -30px; font-size:3em;">
                  {% if award.site == 'GLS' %}
-                            {{ award.site }} <b>{{ award.country.name }}</b>
+                            {{ award.site }} <b>{% filter upper %}{{ award.country.name }}{% endfilter %}</b>
                         {% else %}
-                            {{ award.site }}, <b>{{ award.country.name }}</b>
+                            {{ award.site }}, <b>{% filter upper %}{{ award.country.name }}{% endfilter %}</b>
                         {% endif %}
                         <br>
                         for <b style="color:#1d95d2;">{{ award.name }}</b>
-            </h3>
-            <h3 class="mbr-fonts-style mbr-text display-6">
-                {{ award.description }}
             </h3>
         </div>
         <link href="//vjs.zencdn.net/5.4.6/video-js.min.css" rel="stylesheet">
@@ -154,197 +148,7 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
     </div>
 </section>
 
-<section class="content2 mbr-section article cid-rbRdXG6ozw" id="content2-z">
-    
-     
 
-    <div class="container">
-        <div class="mbr-row mbr-justify-content-center">
-            <div class="mbr-col-sm-12 mbr-col-md-10 mbr-col-lg-8">
-                
-                <p class="mbr-text mbr-fonts-style display-7" style="text-align: justify; margin-top:-30px;">
-                    <b>Interviewee:</b> {{ award.interviewee }} - <a>{{ award.interviewee_contact }}</a>
-                    <br>
-                    <b>Nominator:</b> {{ award.nominator }}
-                    <br>
-                    <br>
-                    {{ award.nomination_comments}}
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="mbr-section content1 cid-rbRfFvfDAD" id="content1-13" style=";background-color: #1d95d2;background-image: linear-gradient(to right,#8ed2ca,#1d95d2,#2a3e7b);">
-
-    
-
-    
-    <div class="container">
-        <h2 class="mbr-title align-center mbr-fonts-style display-5">
-            {{ award.question }}
-        </h2>
-        <br>
-        <br>
-        
-        
-    </div>
-</section>
-
-<section class="mbr-facebook-comments mbr-section cid-rbRer5eUjV" id="social1-11">
-
-    
-    
-    <div class="container text-container">
-        
-        
-    </div>
-    <amp-facebook-comments height="50" layout="fixed-height" class="container comments-container mobirise-loader" data-numposts="2" data-href="http://excellence.glsawards.com/{{ award.slug }}">
-        <div placeholder="" class="placeholder">
-                                <div class="mobirise-spinner">
-                                    <em></em>
-                                    <em></em>
-                                    <em></em>
-                                </div></div>
-    </amp-facebook-comments>
-</section>
-
-<section class="social-share1 cid-rbReEZjuPi" id="social-share1-12" style=";background-color: #1d95d2;background-image: linear-gradient(to right,#8ed2ca,#1d95d2,#2a3e7b);">
-
-    
-
-    
-    <div class="container">
-        <h2 class="mbr-section-title mbr-fonts-style align-center mbr-bold display-5">
-            Share this page
-        </h2>
-        <div class="wrapper align-center">
-            <amp-social-share type="email" width="60" height="60"></amp-social-share>
-            <amp-social-share type="facebook" data-param-app_id="254325784911610" width="60" height="60"></amp-social-share>
-            <amp-social-share type="gplus" width="60" height="60"></amp-social-share>
-            <amp-social-share type="linkedin" width="60" height="60"></amp-social-share>
-            <amp-social-share type="pinterest" data-param-media="https://ampbyexample.com/img/amp.jpg" width="60" height="60"></amp-social-share>
-            <amp-social-share type="tumblr" width="60" height="60"></amp-social-share>
-            <amp-social-share type="twitter" width="60" height="60"></amp-social-share>
-        </div>
-    </div>
-</section>
-
-<section class="form2 cid-rbRdmf8rri" id="Contact">
-
-    
-
-    
-    <div class="container">
-        <h2 class="align-center mbr-fonts-style display-2">
-            Lets get in touch</h2>
-        <h3 class="mbr-section-subtitle align-center mbr-fonts-style display-6">
-            Send your message and we will contact you
-        </h3>
-
-        <div class="mbr-row mbr-justify-content-center">
-            <div class="mbr-col-sm-12 mbr-col-md-10 mbr-col-lg-6" data-form-type="formoid">
-                <form class="mbr-form" method="post" target="_top" action-xhr="https://formoid.net/api/amp-form/push" data-form-title="Mobirise Form"><input type="hidden" name="email" data-form-email="true" value="CWEduhIPF6iht2Heoufe8c9rC6AXVEm+XHP0+v4m3TJnD+5UeoPGq19V4SYU8mow/c/AoamSoDYxC8TTx31hPhzSP9t5BsqhQ7zoi8/pu0GuBW+NjV2CZulcH6raVwi1">
-                    <div submit-success="">
-                        <template data-form-alert="" type="amp-mustache">Subscription successful!</template>
-                    </div>
-                    <div submit-error="">
-                        <template data-form-alert="" type="amp-mustache">Failed! {{error}}</template>
-                    </div>
-                    <div class="fieldset">
-                        <label class="input-label">
-                            <input type="hidden" name="form[data][0][0]" value="Name" id="form[data][1][0]-form2-w" data-form-field="">
-                            <input type="text" name="form[data][0][1]" data-form-field="Name" placeholder="Name" required="" id="form[data][1][1]-form2-w">
-                        </label>
-                        <label class="input-label">
-                            <input type="hidden" name="form[data][1][0]" value="Phone" id="form[data][2][0]-form2-w" data-form-field="">
-                            <input type="phone" name="form[data][1][1]" data-form-field="Phone" placeholder="Phone" required="" id="form[data][2][1]-form2-w">
-                        </label>
-                        <label class="input-label">
-                            <input type="hidden" name="form[data][2][0]" value="Email" id="form[data][0][0]-form2-w" data-form-field="">
-                            <input type="email" name="form[data][2][1]" data-form-field="Email" placeholder="Email" required="" id="form[data][0][1]-form2-w">
-                        </label>
-                        <label class="area">
-                            <input type="hidden" name="form[data][3][0]" value="Message" id="form[data][3][0]-form2-w" data-form-field="">
-                            <textarea name="form[data][3][1]" rows="7" data-form-field="Message" placeholder="Message" id="form[data][3][1]-form2-w"></textarea>
-                        </label>
-                        <span class="input-group-btn">
-                            <button type="submit" class="btn btn-success btn-form display-4">SEND FORM</button>
-                        </span>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="footer5 cid-rbRdKCcIuW" id="footer5-x">
-
-
-    <div class="mbr-overlay"></div>
-    <div class="container-fluid">
-        <div class="mbr-row mbr-justify-content-center main-row">
-
-            <div class="mbr-col-lg-3 mbr-col-md-6 mbr-col-sm-12">
-                <h3 class="mbr-text mbr-bold mbr-fonts-style group-title display-5">
-                    Links</h3>
-                <div class="items mbr-white">
-
-
-                <div class="list-item">
-                        <div class="icon-wrap">
-                            <span class="mbr-iconfont fa-stop fa"><svg width="9" height="9" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M1664 192v1408q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-1408q0-26 19-45t45-19h1408q26 0 45 19t19 45z"></path></svg></span>
-                        </div>
-                        <h5 class="mbr-fonts-style text display-7">
-                            <a href="https://www.willowcreek.com/events/leadership/" style="text-decoration-color:white;color:white;">Global Leadership Summit</a>
-                        </h5>
-                    </div><div class="list-item">
-                        <div class="icon-wrap">
-                            <span class="mbr-iconfont fa-stop fa"><svg width="9" height="9" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M1664 192v1408q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-1408q0-26 19-45t45-19h1408q26 0 45 19t19 45z"></path></svg></span>
-                        </div>
-                        <h5 class="mbr-fonts-style text display-7">
-                           <a href="https://globalleadership.org/" style="text-decoration-color:white;color:white;"> Global Leadership Network</a>
-                        </h5>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mbr-col-lg-3 mbr-col-md-6 mbr-col-sm-12">
-                <h3 class="mbr-text mbr-bold mbr-fonts-style group-title display-5">
-                    Contacts
-                </h3>
-                <p class="mbr-text mbr-white text mbr-fonts-style display-7"><strong>
-                    Email:</strong><br> glsawards@willowcreek.com</p>
-                </div>
-
-            <div class="mbr-col-lg-4 mbr-col-md-12 mbr-col-sm-12" data-form-type="formoid">
-                <div class="mbr-row last-col">
-                    <div class="form-wrap mbr-col-lg-12 mbr-col-md-6 mbr-col-sm-12" data-form-type="formoid">
-                        <h3 class="mbr-text mbr-bold mbr-fonts-style group-title display-5">Subscribe</h3>
-                        <form class="mbr-form" method="post" target="_top" action-xhr="https://formoid.net/api/amp-form/push" data-form-title="Mobirise Form"><input type="hidden" name="email" data-form-email="true" value="HL1XIZXRtvzKsJ5ZPMnpER4UwkQVsGZ/BL2nyEkYpOJjjkBEe1efAKMeW4opfEEQKCvrLdVYRnPr5NhmlW4YWIQF0CWpGsuq0YmWH3T6oRKdpwbeijM7qxKR2443/DfB">
-                            <div submit-success="">
-                                <template data-form-alert="" type="amp-mustache">Subscription successful!</template>
-                            </div>
-                            <div submit-error="">
-                                <template data-form-alert="" type="amp-mustache">Failed! {{error}}</template>
-                            </div>
-                            <div class="fieldset">
-
-                                <input type="hidden" name="form[data][0][0]" value="Email" id="form[data][0][0]-footer5-4" data-form-field="">
-                                <input class="input-label" type="email" name="form[data][0][1]" data-form-field="Email" placeholder="Email" required="" id="form[data][0][1]-footer5-4">
-
-                            </div>
-                            <div class="mbr-section-btn">
-                                <button type="submit" class="btn btn-white display-4">SUBSCRIBE</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
 
 <section class="footer3 cid-rbQRQlxokh" id="footer3-u">
 
