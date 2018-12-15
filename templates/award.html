@@ -133,8 +133,8 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
         <script src="//vjs.zencdn.net/5.4.6/video.min.js"></script>
         <div class="video-block">
             <center>
-                <video id="example_video_1" class="video-js vjs-default-skin"
-                  controls preload="auto" width="700" height="400"
+                <video id="my_video_1" class="video-js vjs-default-skin vjs-big-play-centered"
+                  controls preload="auto"
                   poster="{{ award.image_cover.url }}"
                   data-setup='{"example_option":true}'>
                  <source src="{{ award.file_mp4.url }}" type="video/mp4" />
@@ -177,7 +177,7 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
         </h2>
         <div class="wrapper align-center">
             <amp-social-share type="email" width="60" height="60"></amp-social-share>
-            <amp-social-share type="facebook" data-param-app_id="254325784911610" width="60" height="60"></amp-social-share>
+            <amp-social-share type="facebook" data-param-app_id="912096258980743" width="60" height="60"></amp-social-share>
             <amp-social-share type="linkedin" width="60" height="60"></amp-social-share>
             <amp-social-share type="twitter" width="60" height="60"></amp-social-share>
         </div>
@@ -211,6 +211,29 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
   <button id="scrollToTopButton" on="tap:top-page.scrollTo(duration=200)">                                         <a class="scroll-to-top-arrow"></a>                                     </button></body>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-68145710-5"></script>
+<script>
+videojs.autoSetup();
+
+    videojs('my_video_1').ready(function(){
+      console.log(this.options()); //log all of the default videojs options
+      
+       // Store the video object
+      var myPlayer = this, id = myPlayer.id();
+      // Make up an aspect ratio
+      var aspectRatio = 400/700; 
+
+      function resizeVideoJS(){
+        var width = document.getElementById(id).parentElement.offsetWidth;
+        myPlayer.width(width).height( width * aspectRatio );
+
+      }
+      
+      // Initialize resizeVideoJS()
+      resizeVideoJS();
+      // Then on resize call resizeVideoJS()
+      window.onresize = resizeVideoJS; 
+    });
+</script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
