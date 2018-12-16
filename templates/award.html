@@ -131,7 +131,7 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
         </div>
         <link href="//vjs.zencdn.net/5.4.6/video-js.min.css" rel="stylesheet">
         <script src="//vjs.zencdn.net/5.4.6/video.min.js"></script>
-
+          <div class="video-js-responsive-container vjs-hd">
                 <video id="my_video_1" class="vjs-layout-small"
                   controls preload="auto"
                   poster="{{ award.image_cover.url }}"
@@ -142,15 +142,28 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
                  <source src="{{ award.file_ogg.url }}" type="video/ogg" />
                  <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
                 </video>
-
-                <table>
-                    <thead>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
+          </div>
     </div>
 </section>
+<style>
+.video-js-responsive-container.vjs-hd {
+    padding-top: 56.25%;
+}
+.video-js-responsive-container.vjs-sd {
+    padding-top: 75%;
+}
+.video-js-responsive-container {
+    width: 100%;
+    position: relative;
+}
+.video-js-responsive-container .video-js {
+    height: 100% !important; 
+    width: 100% !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+</style>
 
 <section class="mbr-facebook-comments mbr-section cid-rbRer5eUjV" id="social1-11">
 
