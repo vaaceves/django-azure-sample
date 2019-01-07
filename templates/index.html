@@ -208,7 +208,7 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
     <div class="container">
         <div class="mbr-row mbr-justify-content-center">
             
-            <div class="card mbr-col-sm-12 mbr-col-md-6 mbr-col-lg-4">
+            <div class="card mbr-col-sm-12 ">
               {% for award in last_three_awards %}
                 <div class="card-wrapper">
                     <div class="card-img">
@@ -227,14 +227,14 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
                             {{ award.name }}
                         </h4>
                         <h5 class="card-title mbr-fonts-style align-left mbr-light display-7" style="padding-top:10px;">
-                            {% if last_award.site == 'GLS' %}
-                                {{ last_award.site }} <b>{% filter upper %}{{ last_award.country.name }}{% endfilter %}</b>
+                            {% if award.site == 'GLS' %}
+                                {{ award.site }} <b>{% filter upper %}{{ award.country.name }}{% endfilter %}</b>
                             {% else %}
-                                {{ last_award.site }}, <b>{% filter upper %}{{ last_award.country.name }}{% endfilter %}</b>
+                                {{ award.site }}, <b>{% filter upper %}{{ award.country.name }}{% endfilter %}</b>
                             {% endif %}
                         </h5>
                         <p class="mbr-text mbr-fonts-style align-left display-7" style="padding-top:20px; text-align: justify;">
-                            {{ last_award.description }}
+                            {{ award.description }}
                         </p>
                         <div class="mbr-section-btn align-left" style="padding-top:15px;"><a class="btn-underline text-primary display-7" href="{% url 'award' last_award.slug %}">
                                 LEARN MORE
