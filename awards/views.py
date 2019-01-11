@@ -7,7 +7,7 @@ from django.views.generic import ListView
 # home
 def home(request):
     last_award = Award.objects.latest('id')
-    last_three_awards = Award.objects.all().order_by('-id')[:3]
+    last_three_awards = Award.objects.filter(featured=True).order_by('-id')[:3]
 
     context_dic = {
         'last_three_awards': last_three_awards,
@@ -34,7 +34,7 @@ def error_404(request):
 # archive
 class ArchiveView(ListView):
     template_name = 'archive.html'
-    queryset = Award.objects.all().order_by('-id')
+    queryset = Award.objects.filter(featured=True).order_by('-id')
 
 # award detail
 class AwardView(DetailView):
