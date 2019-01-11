@@ -34,6 +34,7 @@ class Award(models.Model):
     file_ogg = models.FileField(upload_to=user_directory_path, null=True)
     timestamp = models.DateTimeField(default=now)
     featured = models.BooleanField(default=False)
+    public = models.BooleanField(default=False)
 
     def _get_unique_slug(self):
         slug_string = self.name
