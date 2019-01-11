@@ -219,6 +219,7 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
             
             <div class="card mbr-col-sm-12 mbr-col-md-6 mbr-col-lg-4">
               {% for award in last_three_awards %}
+              <br>
                 <div class="card-wrapper">
                     <div class="card-img">
                         <amp-img src="{{ award.image_cover.url }}" layout="responsive" width="349.5" class="mobirise-loader" height="233" alt="Mobirise">
@@ -249,7 +250,6 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
                                 LEARN MORE
                             </a></div>
                     </div>
-                  <br>
                   {% endfor %}
                 </div>
               
