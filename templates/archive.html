@@ -120,7 +120,7 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
 
     <div class="container">
         {% for award in object_list %}
-        {% if awards.featured == True %}
+        {% if award.featured == True %}
             <div class="mbr-row mbr-justify-content-center main-row" style="height: 400px;">
                 <div class="image-block">
                     <amp-img src="{{ award.image_cover.url }}" layout="responsive" width="570.6666666666666" height="321" alt="Mobirise" class="mobirise-loader">
