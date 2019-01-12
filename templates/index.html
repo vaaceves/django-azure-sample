@@ -127,6 +127,7 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
     
     <div class="mbr-row main-row">
     {% if featured_award %}
+      {% if featured_award.featured == True %}
         <div class="image-block ">
             <amp-img src="{{ featured_award.image_cover.url }}" layout="responsive" width="675" height="450" alt="GLS Excellence Award {{ featured_award.name }}" class="mobirise-loader">
                 <div placeholder="" class="placeholder">
@@ -159,7 +160,7 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
         </div>
 
     {% else %}
-
+      {% if last_award.featured == True %}
         <div class="image-block ">
             <amp-img src="{{ last_award.image_cover.url }}" layout="responsive" width="675" height="450" alt="GLS Excellence Award {{ last_award.name }}" class="mobirise-loader">
                 <div placeholder="" class="placeholder">
@@ -219,6 +220,7 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
             
             <div class="card mbr-col-sm-12 mbr-col-md-6 mbr-col-lg-4">
               {% for award in last_three_awards %}
+              {% if award.featured == True %}
               <br>
                 <div class="card-wrapper">
                     <div class="card-img">
@@ -250,6 +252,7 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
                                 LEARN MORE
                             </a></div>
                     </div>
+                  {% endif %}
                   {% endfor %}
                 </div>
               
