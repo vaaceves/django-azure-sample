@@ -8,35 +8,8 @@
   <meta name="generator" content="Mobirise v4.8.8, mobirise.com">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="{% static 'assets/images/tgls2018-logo-web-51x54.png' %}" type="image/x-icon">
-  <!-- COMMON TAGS -->
-<meta charset="utf-8">
-<title>{{ award.name }}</title>
-<!-- Search Engine -->
-<meta name="description" content="{{ award.description }}">
-<meta name="image" content="https://scontent.fmex10-2.fna.fbcdn.net/v/t1.0-9/28959120_10156333720579974_8905709186436948122_n.jpg?_nc_cat=109&_nc_ht=scontent.fmex10-2.fna&oh=ae841469c73cd3afb8c429d564e74526&oe=5C992401">
-<!-- Schema.org for Google -->
-<meta itemprop="name" content="{{ award.name }}">
-<meta itemprop="description" content="{{ award.description }}">
-<meta itemprop="image" content="https://scontent.fmex10-2.fna.fbcdn.net/v/t1.0-9/28959120_10156333720579974_8905709186436948122_n.jpg?_nc_cat=109&_nc_ht=scontent.fmex10-2.fna&oh=ae841469c73cd3afb8c429d564e74526&oe=5C992401">
-<!-- Twitter -->
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="{{ award.name }}">
-<meta name="twitter:description" content="{{ award.description }}">
-<meta name="twitter:site" content="@wcagls">
-<meta name="twitter:creator" content="@wcagls">
-<meta name="twitter:image:src" content="https://scontent.fmex10-2.fna.fbcdn.net/v/t1.0-9/28959120_10156333720579974_8905709186436948122_n.jpg?_nc_cat=109&_nc_ht=scontent.fmex10-2.fna&oh=ae841469c73cd3afb8c429d564e74526&oe=5C992401">
-<meta name="twitter:player" content="{{ award.file_mp4.url }}">
-<!-- Open Graph general (Facebook, Pinterest & Google+) -->
-<meta name="og:title" content="{{ award.name }}">
-<meta name="og:description" content="{{ award.description }}">
-<meta name="og:image" content="https://scontent.fmex10-2.fna.fbcdn.net/v/t1.0-9/28959120_10156333720579974_8905709186436948122_n.jpg?_nc_cat=109&_nc_ht=scontent.fmex10-2.fna&oh=ae841469c73cd3afb8c429d564e74526&oe=5C992401">
-<meta name="og:url" content="https://excellence.glsawards.com">
-<meta name="og:site_name" content="{{ award.name }}">
-<meta name="og:locale" content="en_US">
-<meta name="og:video" content="{{ award.file_mp4.url }}">
-<meta name="fb:admins" content="302341909973">
-<meta name="fb:app_id" content="912096258980743">
-<meta name="og:type" content="website">
+  <meta name="description" content="GLS Excellence Awards - {{ award.description }}">
+  <title>{{ award.name }}</title>
   
 <link rel="canonical" href="awards.html">
  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
@@ -158,7 +131,7 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
         </div>
         <link href="//vjs.zencdn.net/5.4.6/video-js.min.css" rel="stylesheet">
         <script src="//vjs.zencdn.net/5.4.6/video.min.js"></script>
-          <style>
+          <!-- <style>
           .video-js-responsive-container.vjs-hd {
               padding-top: 56.25%;
           }
@@ -176,9 +149,9 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
               top: 0;
               left: 0;
           }
-          </style>
+          </style> -->
           <div class="video-js-responsive-container vjs-hd">
-                <video id="my_video_1" class="video-js vjs-default-skin"
+                <!-- <video id="my_video_1" class="video-js vjs-default-skin"
                   controls preload="auto"
                   poster="{{ award.image_cover.url }}"
                   data-setup='{"example_option":true}'>
@@ -187,7 +160,30 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
                  <source src="{{ award.file_webm.url }}" type="video/webm" />
                  <source src="{{ award.file_ogg.url }}" type="video/ogg" />
                  <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-                </video>
+                </video> -->
+                <style>
+                    .embed-container {
+                    padding: 50px;
+                    position: relative;
+                    padding-bottom: 56.25%;
+                    height: 0;
+                    overflow: hidden;
+                    max-width: 100%;
+                    }
+
+                    .embed-container iframe,
+                    .embed-container object,
+                    .embed-container embed {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    }
+                </style>
+                <div class='embed-container'>
+                    <iframe src="https://player.vimeo.com/video/{{ award.file_id }}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                </div>
           </div>
     </div>
 </section>

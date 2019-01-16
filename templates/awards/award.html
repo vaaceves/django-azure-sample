@@ -131,7 +131,7 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
         </div>
         <link href="//vjs.zencdn.net/5.4.6/video-js.min.css" rel="stylesheet">
         <script src="//vjs.zencdn.net/5.4.6/video.min.js"></script>
-          <style>
+          <!-- <style>
           .video-js-responsive-container.vjs-hd {
               padding-top: 56.25%;
           }
@@ -149,9 +149,9 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
               top: 0;
               left: 0;
           }
-          </style>
+          </style> -->
           <div class="video-js-responsive-container vjs-hd">
-                <video id="my_video_1" class="video-js vjs-default-skin"
+                <!-- <video id="my_video_1" class="video-js vjs-default-skin"
                   controls preload="auto"
                   poster="{{ award.image_cover.url }}"
                   data-setup='{"example_option":true}'>
@@ -160,7 +160,30 @@ body{font-family: Avenir Next;}blockquote{border-color: #1d95d2;}.display-1{font
                  <source src="{{ award.file_webm.url }}" type="video/webm" />
                  <source src="{{ award.file_ogg.url }}" type="video/ogg" />
                  <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-                </video>
+                </video> -->
+                <style>
+                    .embed-container {
+                    padding: 50px;
+                    position: relative;
+                    padding-bottom: 56.25%;
+                    height: 0;
+                    overflow: hidden;
+                    max-width: 100%;
+                    }
+
+                    .embed-container iframe,
+                    .embed-container object,
+                    .embed-container embed {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    }
+                </style>
+                <div class='embed-container'>
+                    <iframe src="https://player.vimeo.com/video/{{ award.file_id }}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                </div>
           </div>
     </div>
 </section>
